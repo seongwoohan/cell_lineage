@@ -72,7 +72,8 @@ def head_seq_list():
     for line1 in fastaLines:
         num_head_seq = line1.split(':')[0].split(' ')[1]
         headList.append(num_head_seq)  
-    print(headList)
+    #print(headList)
+    return headList
 
 head_seq_list()
 
@@ -80,7 +81,8 @@ head_seq_list()
 # Save gene sequence into a list
 def gene_seq_list():
     source = "/Users/seongwoohan/desktop/sra_data.fasta_cut.txt"
-    seq = open(source, "r")    
+    seq = open(source, "r")   
+	
     fastaLines = seq.readlines()
     geneList = []
     
@@ -88,19 +90,23 @@ def gene_seq_list():
         if (i%2 != 0):
             num_gene_seq = (fastaLines[i]).rstrip()
             geneList.append(num_gene_seq)
-    print(geneList) 
+    #print(geneList) 
+    return geneList
     
 gene_seq_list()  
 
 
 # Count how many each head sequence has gene sequence
 def mapping():
+    headList = head_seq_list()
+    geneList = gene_seq_list()
+	
     df = pd.DataFrame({'head':headList, 'gene':geneList}) 
     uniqueHeadList = df['head'].unique().tolist()
     
     for uniqueHead in uniqueHeadList:
         uniqueDF = df[df['head'] == uniqueHead]
-        genes = uniqueDF['gene'].unique().tolist()
+        genes = uniqueDF['gene'].tolist()
         print('{0}:{1}, {1}'.format(uniqueHead, len(genes), genes))
         #print('{0}: {1}'.format(unique, genes))
         #print('{0}: {1}'.format(uniqueHead, genes))
