@@ -11,3 +11,5 @@ https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX3287416%09&cmd=search&m
 2. Save barcode as key and gene sequence as value
 3. Trim fastq data with the Trimmomatic software to remove low-quality bases
 
+
+Generated file from the code is in textfile folder
