@@ -1,6 +1,6 @@
 # Cell Lineage
 
-##Construction of lineage trees from scGESTALT barcode
+Construction of lineage trees from scGESTALT barcode
 
 Data
 
