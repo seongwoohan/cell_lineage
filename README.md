@@ -3,7 +3,6 @@
 Construction of lineage trees from scGESTALT barcode
 
 Data
-
 https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?exp=SRX3287416%09&cmd=search&m=downloads&s=seq
 
   scGESTALT barcode analysis 
